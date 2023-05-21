@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1" />
+    <title>ROOMS BAR CHART</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+
+</head>
+<body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="height: 400px"></div>
+<script th:inline="javascript">
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Bookings by Room Type'
+        },
+        subtitle: {
+            text: 'Source: Hotel Bookings'
+        },
+        xAxis: {
+            categories: ['SINGLE', 'TWIN', 'DOUBLE', 'SUITE'],
+            labels: {
+                style: {
+                    fontSize: '16px'
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Number of Bookings'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+            name: 'Bookings',
+            data: [
+                [[${singleRoomsCnt}]],
+                [[${twinRoomsCnt}]],
+                [[${doubleRoomsCnt}]],
+                [[${suiteRoomsCnt}]]
+            ]
+        }]
+    });
+</script>
+</body>
+</html>

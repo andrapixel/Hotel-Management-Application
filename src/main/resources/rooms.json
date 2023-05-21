@@ -1,0 +1,28 @@
+[
+  {
+    "capacity": 1,
+    "available": true,
+    "type": "SINGLE"
+  },
+  {
+    "capacity": 2,
+    "available": true,
+    "type": "DOUBLE"
+  },
+  {
+    "capacity": 3,
+    "available": true,
+    "type": "SUITE"
+  },
+  {
+    "capacity": 5,
+    "available": true,
+    "type": "SUITE"
+  },
+  {
+    "capacity": 5,
+    "available": true,
+    "type": "TWIN"
+  }
+]
+
